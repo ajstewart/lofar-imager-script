@@ -19,7 +19,7 @@ parser.add_option("-b", "--bandthreshs", action="store", type="string", dest="ba
 parser.add_option("-u", "--maxbunit", action="store", type="string", dest="maxbunit", default="M",help="Choose which method to limit the baselines, enter 'UV' for UVmax (in klambda) or 'M' for physical length (in metres) [default: %default]")
 parser.add_option("-l", "--maxbaseline", action="store", type="float", dest="maxbaseline", default=6000,help="Enter the maximum baseline to image out to, making sure it corresponds to the unit options [default: %default]")
 parser.add_option("-m", "--mosaic", action="store_true", dest="mosaic", default=False, help="Also generate mosaics [default: %default]")
-parser.add_option("-r", "--avgpbradius", action="store", type="float", dest="avgpbr", default=0.5, help="Radius beyond which to zero avgpb values (expressed as fraction of image width)[default: %default]")
+parser.add_option("-r", "--avgpbradius", action="store", type="float", dest="avgpbr", default=0.5, help="Radius beyond which to zero avgpb values (expressed as fraction of image width) [default: %default]")
 parser.add_option("-N", "--nice", action="store", type="int", dest="nice", default=False, help="Set the niceness level [default: %default]")
 parser.add_option("-o", "--output", action="store", type="string", dest="output", default="images_standalone", help="Specify the name of the images folder that will hold the results. [default: %default]")
 parser.add_option("-p", "--parset", action="store", type="string", dest="parset", default="aw.parset", help="Define parset to use containing AWimager options [default: %default]")
