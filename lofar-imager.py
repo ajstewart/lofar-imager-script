@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import glob, subprocess, os, optparse, sys, pyfits, re, time
+import glob, subprocess, os, optparse, sys, pyfits, time
 from functools import partial
 from multiprocessing import Pool as mpl
 import pyrap.tables as pt
