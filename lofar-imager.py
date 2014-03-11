@@ -306,7 +306,7 @@ def create_mosaics(tomos, out, time_mode, avgpbrad):
 			print "Creating Mosaic for {0} {1} Window {2}...".format(mos_obsid, mos_band, window)
 			mosname=os.path.join(out, mos_obsid, "mosaics", "{0}_{1}_window{2:03d}_mosaic.fits".format(mos_obsid, mos_band, window))
 			sensname=os.path.join(out, mos_obsid, "mosaics", "{0}_{1}_window{2:03d}_mosaic_sens.fits".format(mos_obsid, mos_band, window))
-			subprocess.call("python /home/as24v07/scripts/mos.py -o {0} -s {1} {2}".format(mosname, sensname, images_cmd), shell=True)
+			subprocess.call("python /home/as24v07/scripts/mos.py -a avgpbz -o {0} -s {1} {2}".format(mosname, sensname, images_cmd), shell=True)
 	else:
 		images=sorted(glob.glob(os.path.join(out, mos_obsid, "mosaics", "*{0}*.restored.corr".format(mos_band))))
 		avgpbs=sorted(glob.glob(os.path.join(out, mos_obsid, "mosaics", "*{0}*.avgpb".format(mos_band))))
@@ -318,7 +318,7 @@ def create_mosaics(tomos, out, time_mode, avgpbrad):
 		print "Creating Mosaic for {0} {1}...".format(mos_obsid, mos_band)
 		mosname=os.path.join(out, mos_obsid, "mosaics", "{0}_{1}_mosaic.fits".format(mos_obsid, mos_band))
 		sensname=os.path.join(out, mos_obsid, "mosaics", "{0}_{1}_mosaic_sens.fits".format(mos_obsid, mos_band))
-		subprocess.call("python /home/as24v07/scripts/mos.py -o {0} -s {1} -a avgpbz {2}".format(mosname, sensname, images_cmd), shell=True)
+		subprocess.call("python /home/as24v07/scripts/mos.py -a avgpbz -o {0} -s {1} -a avgpbz {2}".format(mosname, sensname, images_cmd), shell=True)
 
 def AW_Steps(g, usemask, aw_env, nit, maxb, initialiters, mosaic, automaticthresh, bandsthreshs_dict, uvORm, userthresh, padding, out, env):
 	"""
